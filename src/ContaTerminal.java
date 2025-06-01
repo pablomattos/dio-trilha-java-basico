@@ -14,14 +14,12 @@ public class ContaTerminal {
         while (true) {
             System.out.print("Digite o seu nome completo: ");
             nomeDoCliente = scanner.nextLine();
-
             if (nomeDoCliente.matches("^[A-Za-zÀ-ÿ ]+$")) {
                 break;
             } else {
                 System.out.println("Nome inválido. Digite apenas letras (sem números ou símbolos).");
             }
         }
-
         // Validação da agência
         String regex = "^\\d{4}-\\d{1}$";
         Pattern pattern = Pattern.compile(regex);
@@ -36,7 +34,6 @@ public class ContaTerminal {
                 System.out.println("Formato inválido. Use o formato XXXX-X (ex: 2414-2).");
             }
         }
-
         // Validação da conta
         while (true) {
             System.out.print("Digite os cinco números da sua conta (Ex.:00001): ");
@@ -54,7 +51,6 @@ public class ContaTerminal {
                 scanner.next(); // Limpa entrada inválida
             }
         }
-
         // Leitura do saldo
         while (true) {
             System.out.print("Digite o seu saldo atual: ");
@@ -66,10 +62,8 @@ public class ContaTerminal {
                 scanner.next(); // Limpa entrada inválida
             }
         }
-
         // Formatação da conta com 5 dígitos
         String contaFormatada = String.format("%05d", conta);
-
         // Saída final
         System.out.println();
         System.out.println("Olá " + nomeDoCliente + "! Obrigado por criar uma conta em nosso banco.");
